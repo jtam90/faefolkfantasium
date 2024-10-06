@@ -27,3 +27,27 @@ def create_being():
 
     return render_template("create_being.html")
 
+    @app.route("/edit/<int:being_id>", methods=["GET", "POST"])
+def edit_being(being_id):
+    being = Being.query.get_or_404(being_id)  # Get the being by ID
+
+    if request.method == "POST":
+        # Update the being's details
+        being.name = request.form.get("name")
+        being.description = request.form.get("description")
+
+        db.session.commit()  # Save changes to the database
+        flash('Being updated successfully!', 'success')  # Flash message
+        return redirect(url_for("home"))  # Redirect to home page
+
+    return render_template("edit_being.html", being=being)  # Render the edit form
+
+# Route for Deleting a Being
+@app.route("/delete/<int:being_id>", methods=["POST"])
+def delete_being(being_id):
+    being = Being.query.get_or_404(being_id)  # Get the being by ID
+    db.session.delete(being)  # Delete the being
+    db.session.commit()  # Commit the changes
+    flash('Being deleted successfully!', 'success')  # Flash message
+    return redirect(url_for("home"))  # Redirect to home page
+
