@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ethereal Being</title>
+</head>
+<body>
+    <h1>Edit {{ being.name }}</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ being.name }}" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ being.description }}</textarea>
+        <br>
+        <button type="submit">Update Being</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Catalogue</a>
+</body>
+</html>
