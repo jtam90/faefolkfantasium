@@ -1,3 +1,19 @@
+/* CSS Keyframes for Sparkle Animation */
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(1); /* Start at normal size */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: scale(1.5); /* Increase size */
+        opacity: 0; /* Fade out */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
 body {
     background-image: url("/static/images/background-image.jpg");
     background-size: cover;
@@ -22,3 +38,16 @@ h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow */
     margin: 15px 0; /* Add margin for spacing */
 }
+
+/* Sparkle Class to Apply Animation */
+.sparkle {
+    position: absolute; /* Position it relative to the document */
+    width: 10px; /* Width of the sparkle */
+    height: 10px; /* Height of the sparkle */
+    background-color: rgba(255, 255, 255, 0.8); /* White color with some transparency */
+    border-radius: 50%; /* Make it a circle */
+    pointer-events: none; /* Prevent it from interfering with other mouse events */
+    animation: sparkle-animation 1s ease-in-out; /* Apply the sparkle animation */
+}
+
+
