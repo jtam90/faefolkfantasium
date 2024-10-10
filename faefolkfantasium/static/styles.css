@@ -1,16 +1,24 @@
 /* CSS Keyframes for Sparkle Animation */
 @keyframes sparkle-animation {
     0% {
-        transform: scale(1); /* Start at normal size */
-        opacity: 1; /* Fully visible */
+        transform: scale(1);
+        /* Start at normal size */
+        opacity: 1;
+        /* Fully visible */
     }
+
     50% {
-        transform: scale(1.5); /* Increase size */
-        opacity: 0; /* Fade out */
+        transform: scale(1.5);
+        /* Increase size */
+        opacity: 0;
+        /* Fade out */
     }
+
     100% {
-        transform: scale(1); /* Return to normal size */
-        opacity: 1; /* Fully visible */
+        transform: scale(1);
+        /* Return to normal size */
+        opacity: 1;
+        /* Fully visible */
     }
 }
 
@@ -19,35 +27,53 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: url("/static/cursor/cursor.png"), auto;
 }
 
 h1 {
-    font-family: 'Windsong', serif; /* Or any font you choose */
-    font-size: 3rem; /* Increase size to make it stand out */
-    font-weight: bold; /* Make it bold */
-    color: gold; /* Ensure it's a contrasting color */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for depth */
-    margin: 20px 0; /* Add margin for spacing */
+    font-family: 'Windsong', serif;
+    /* Or any font you choose */
+    font-size: 3rem;
+    /* Increase size to make it stand out */
+    font-weight: bold;
+    /* Make it bold */
+    color: gold;
+    /* Ensure it's a contrasting color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    /* Add a shadow for depth */
+    margin: 20px 0;
+    /* Add margin for spacing */
 }
 
 h2 {
-    font-family: 'Playfair Display', serif; /* Example for subheadings */
-    font-size: 2rem; /* Larger than before */
-    font-weight: semi-bold; /* Slightly bold */
-    color: #eaeaea; /* Softer white */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow */
-    margin: 15px 0; /* Add margin for spacing */
+    font-family: 'Playfair Display', serif;
+    /* Example for subheadings */
+    font-size: 2rem;
+    /* Larger than before */
+    font-weight: semi-bold;
+    /* Slightly bold */
+    color: #eaeaea;
+    /* Softer white */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Text shadow */
+    margin: 15px 0;
+    /* Add margin for spacing */
 }
 
 /* Sparkle Class to Apply Animation */
 .sparkle {
-    position: absolute; /* Position it relative to the document */
-    width: 10px; /* Width of the sparkle */
-    height: 10px; /* Height of the sparkle */
-    background-color: rgba(255, 255, 255, 0.8); /* White color with some transparency */
-    border-radius: 50%; /* Make it a circle */
-    pointer-events: none; /* Prevent it from interfering with other mouse events */
-    animation: sparkle-animation 1s ease-in-out; /* Apply the sparkle animation */
+    position: absolute;
+    /* Position it relative to the document */
+    width: 6px;
+    /* Width of the sparkle */
+    height: 6px;
+    /* Height of the sparkle */
+    background-color: rgba(255, 251, 0, 0.8);
+    /* White color with some transparency */
+    border-radius: 50%;
+    /* Make it a circle */
+    pointer-events: none;
+    /* Prevent it from interfering with other mouse events */
+    animation: sparkle-animation 1s ease-in-out;
+    /* Apply the sparkle animation */
 }
-
-
