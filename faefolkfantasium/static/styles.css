@@ -1,6 +1,24 @@
 body {
-    background-image: url('/faefolkfantasium/static/images/background-image.jpg');
+    background-image: url("/static/images/background-image.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Windsong', serif; /* Or any font you choose */
+    font-size: 3rem; /* Increase size to make it stand out */
+    font-weight: bold; /* Make it bold */
+    color: gold; /* Ensure it's a contrasting color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for depth */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; /* Example for subheadings */
+    font-size: 2rem; /* Larger than before */
+    font-weight: semi-bold; /* Slightly bold */
+    color: #eaeaea; /* Softer white */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow */
+    margin: 15px 0; /* Add margin for spacing */
 }
