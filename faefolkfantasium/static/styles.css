@@ -31,33 +31,131 @@ body {
 }
 
 h1 {
-    font-family: 'Windsong', serif;
-    /* Or any font you choose */
-    font-size: 3rem;
-    /* Increase size to make it stand out */
-    font-weight: bold;
-    /* Make it bold */
+    font-size: 5rem;
     color: gold;
-    /* Ensure it's a contrasting color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    /* Add a shadow for depth */
     margin: 20px 0;
-    /* Add margin for spacing */
+    padding: 20px;
+    font-family: 'Princess Sofia', sans-serif;
+    text-align: center;
 }
 
+.princess-sofia-regular {
+    font-family: "Princess Sofia", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nanum-myeongjo-regular {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.updock-regular {
+    font-family: "Updock", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 h2 {
-    font-family: 'Playfair Display', serif;
-    /* Example for subheadings */
+    font-family: 'Nanum Myeongjo', serif;
+    /* Subheading font */
     font-size: 2rem;
-    /* Larger than before */
-    font-weight: semi-bold;
-    /* Slightly bold */
-    color: #eaeaea;
-    /* Softer white */
+    /* Size for subheading */
+    color: #a8b1a2;
+    /* Color for subheading */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    /* Text shadow */
+    /* Shadow */
     margin: 15px 0;
-    /* Add margin for spacing */
+    /* Spacing */
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #a8b1a2;
+}
+
+h3,
+p {
+    font-family: 'Updock', Courier;
+    font-size: 1.5rem !important;
+    color: #decf06;
+}
+
+h3 {
+    font-size: 3.5rem !important;
+    font-weight: bold !important;
+    color: rgb(146, 111, 6) !important;
+    padding: 10px;
+}
+
+.card-container {    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 250px;
+    background-color: rgb(255, 245, 109);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Center the content */
+    opacity: 0.6;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.card-actions {
+    margin-top: 15px;
+}
+
+.card-actions .btn-edit,
+.card-actions .btn-delete {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.add {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-add {
+    background-color: green;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+}
+
+.btn-delete {
+    background-color: #f44336;
 }
 
 /* Sparkle Class to Apply Animation */

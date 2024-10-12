@@ -15,5 +15,21 @@ document.addEventListener("mousemove", function(e) {
     }, 1000); // Duration of sparkle animation
 });
 
+function deleteBeing(beingId) {
+    if (confirm("Are you sure you want to delete this being?")) {
+        fetch(`/delete/${beingId}`, {
+            method: 'POST',
+            
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.reload();  // Reload the page after deletion
+            } else {
+                alert('Failed to delete being.');
+            }
+        });
+    }
+}
+
 
 

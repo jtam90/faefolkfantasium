@@ -41,7 +41,7 @@ def edit_being(being_id):
 # Route for Deleting a Being
 @app.route("/delete/<int:being_id>", methods=["POST"])
 def delete_being(being_id):
-    being = Being.query.get(being_id)
+    being = Being.query.get_or_404(being_id)
     db.session.delete(being)
     db.session.commit()
     return redirect(url_for("home"))

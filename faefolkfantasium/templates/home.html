@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
 
-    
-    
-    <title>Ethereal Beings</title>
+
+    <title>Faefolk Fantasium</title>
 </head>
+
 <body>
-    <h1>Faefolk Fantasium</h1>
-    <h2>A Whimsical Compendium of Ethereal Beings</h2>
-    <ul>
+    <h1 class="princess-sofia-regular">Faefolk Fantasium</h1>
+    <h2 class="nanum-myeongjo-regular">A Whimsical Compendium of Ethereal Beings</h2>>
+    <div class="card-container">
         {% for being in beings %}
-            <li>{{ being.name }} - {{ being.description }} (Type: {{ being.type }})</li>
+        <div class="card">
+            <h3 class="updock-regular">{{ being.name }}</h3>
+            <p class="updock-regular">{{ being.description }}</p>
+            <div class="card-actions">
+                <a href="{{ url_for('edit_being', being_id=being.id) }}" class="btn-edit">Edit</a>
+                <a href="{{ url_for('delete_being', being_id=being.id) }}" class="btn-delete"
+                    onclick="deleteBeing('{{ being.id }}')">Delete</a>
+            </div>
+        </div>
         {% endfor %}
-        <ul>
-            {% for being in beings %}
-                <li>
-                    <h2>{{ being.name }}</h2>
-                    <p>{{ being.description }}</p>
-                    <a href="{{ url_for('edit_being', being_id=being.id) }}">Edit</a>
-                    <form action="{{ url_for('delete_being', being_id=being.id) }}" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
-                </li>
-            {% endfor %}
-        </ul>
-        
-    </ul>
-    <a href="{{ url_for('create_being') }}">Create a New Ethereal Being</a>
+    </div>
+    <div class="add">
+    <a href="{{ url_for('create_being') }}" class="btn-add">Add a new being</a>
+    </div>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
+
 </html>
