@@ -31,11 +31,11 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     color: gold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin: 20px 0;
-    padding: 20px;
+    padding: 10px;
     font-family: 'Princess Sofia', sans-serif;
     text-align: center;
 }
@@ -46,8 +46,8 @@ h1 {
     font-style: normal;
 }
 
-.nanum-myeongjo-regular {
-    font-family: "Nanum Myeongjo", serif;
+.macondo-regular {
+    font-family: "Macondo", cursive;
     font-weight: 400;
     font-style: normal;
 }
@@ -60,11 +60,10 @@ h1 {
 
 
 h2 {
-    font-family: 'Nanum Myeongjo', serif;
-    /* Subheading font */
-    font-size: 2rem;
+    font-family: 'Macondo', serif;
+    font-size: 2.5rem;
     /* Size for subheading */
-    color: #a8b1a2;
+    color: goldenrod;
     /* Color for subheading */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     /* Shadow */
@@ -89,11 +88,11 @@ p {
 h3 {
     font-size: 3.5rem !important;
     font-weight: bold !important;
-    color: rgb(146, 111, 6) !important;
+    color: rgb(62, 97, 62) !important;
     padding: 10px;
 }
 
-.card-container {    
+.card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -138,24 +137,37 @@ h3 {
 }
 
 .add {
-    display: inline-block;
-    padding: 5px 10px;
+    display: flex;
+    justify-content: left;
+    padding: 10px 10px;
     margin: 5px;
     color: white;
     text-decoration: none;
-    border-radius: 4px;
+    opacity: 0.8;
 }
 
 .btn-add {
-    background-color: green;
+    background-color: rgb(62, 97, 62);
+    border-radius: 8px;
+    padding: 1px 6px;
+    color: rgb(255, 245, 109);
+    font-family: 'Macondo', Courier;
+    font-size: 1.7rem;
+    text-decoration: none;
 }
 
 .btn-edit {
-    background-color: #4CAF50;
+    background-color: rgb(62, 97, 62);
+    font-family: 'Macondo', Courier;
+    color: rgb(255, 245, 109) !important;
+    font-size: 1.2rem;
 }
 
 .btn-delete {
-    background-color: #f44336;
+    background-color: #dc7601;
+    font-family: 'Macondo', Courier;
+    color: rgb(255, 245, 109) !important;
+    font-size: 1.2rem;
 }
 
 /* Sparkle Class to Apply Animation */

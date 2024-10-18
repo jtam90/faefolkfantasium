@@ -8,9 +8,8 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Updock&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
 
 
@@ -19,7 +18,11 @@
 
 <body>
     <h1 class="princess-sofia-regular">Faefolk Fantasium</h1>
-    <h2 class="nanum-myeongjo-regular">A Whimsical Compendium of Ethereal Beings</h2>>
+    <h2 class="macondo-regular">A Whimsical Compendium of Ethereal Beings</h2>>
+</div>
+<div class="add">
+<a href="{{ url_for('create_being') }}" class="btn-add">Add...</a>
+</div>
     <div class="card-container">
         {% for being in beings %}
         <div class="card">
@@ -32,10 +35,7 @@
             </div>
         </div>
         {% endfor %}
-    </div>
-    <div class="add">
-    <a href="{{ url_for('create_being') }}" class="btn-add">Add a new being</a>
-    </div>
+    
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
