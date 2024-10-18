@@ -26,6 +26,7 @@
     <div class="card-container">
         {% for being in beings %}
         <div class="card">
+            <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Description of faery" class="card-image">
             <h3 class="updock-regular">{{ being.name }}</h3>
             <p class="updock-regular">{{ being.description }}</p>
             <div class="card-actions">

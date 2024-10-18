@@ -11,4 +11,3 @@ db = SQLAlchemy(app)
 from faefolkfantasium import routes
 
 
-
