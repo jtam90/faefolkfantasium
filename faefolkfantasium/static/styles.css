@@ -127,6 +127,12 @@ h3 {
     margin-top: 15px;
 }
 
+.card-image {
+    width: 100%; /* Make the image fill the width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; 
+}
+
 .card-actions .btn-edit,
 .card-actions .btn-delete {
     display: inline-block;
