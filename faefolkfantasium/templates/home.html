@@ -29,11 +29,11 @@
             {% if being.name == "Faery" %}
                 <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
             {% elif being.name == "Elf" %}
-                <img src="{{ url_for('static', filename='images/elf.jpg') }}" alt="Elf Image" class="card-image">
+                <img src="{{ url_for('static', filename='images/elf1.jpg') }}" alt="Elf Image" class="card-image">
                 {% elif being.name == "Dryad" %}
-                <img src="{{ url_for('static', filename='images/dryad1.jpg') }}" alt="Dryad Image" class="card-image">
+                <img src="{{ url_for('static', filename='images/dryad3.jpg') }}" alt="Dryad Image" class="card-image">
                 {% elif being.name == "Sprite" %}
-                <img src="{{ url_for('static', filename='images/sprite.jpg') }}" alt="Sprite Image" class="card-image">
+                <img src="{{ url_for('static', filename='images/sprite1.jpg') }}" alt="Sprite Image" class="card-image">
             {% else %}
                 <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
             {% endif %}
