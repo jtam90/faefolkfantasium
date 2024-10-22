@@ -131,6 +131,7 @@ h3 {
     width: 100%; /* Make the image fill the width of the card */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; 
+    object-fit: cover;
 }
 
 .card-actions .btn-edit,
