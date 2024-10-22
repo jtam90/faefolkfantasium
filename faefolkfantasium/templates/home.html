@@ -26,13 +26,23 @@
     <div class="card-container">
         {% for being in beings %}
         <div class="card">
-            <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Description of faery" class="card-image">
-            <h3 class="updock-regular">{{ being.name }}</h3>
-            <p class="updock-regular">{{ being.description }}</p>
+            {% if being.name == "Faery" %}
+                <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
+            {% elif being.name == "Elf" %}
+                <img src="{{ url_for('static', filename='images/elf.jpg') }}" alt="Elf Image" class="card-image">
+                {% elif being.name == "Dryad" %}
+                <img src="{{ url_for('static', filename='images/dryad.jpg') }}" alt="Dryad Image" class="card-image">
+                {% elif being.name == "Sprite" %}
+                <img src="{{ url_for('static', filename='images/sprite.jpg') }}" alt="Sprite Image" class="card-image">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
+            {% endif %}
+            
+            <h3>{{ being.name }}</h3>
+            <p>{{ being.description }}</p>
             <div class="card-actions">
                 <a href="{{ url_for('edit_being', being_id=being.id) }}" class="btn-edit">Edit</a>
-                <a href="{{ url_for('delete_being', being_id=being.id) }}" class="btn-delete"
-                    onclick="deleteBeing('{{ being.id }}')">Delete</a>
+                <a href="{{ url_for('delete_being', being_id=being.id) }}" class="btn-delete">Delete</a>
             </div>
         </div>
         {% endfor %}
