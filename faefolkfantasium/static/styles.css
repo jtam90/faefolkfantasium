@@ -78,14 +78,14 @@ h4 {
     color: #a8b1a2;
 }
 
-h3,
 p {
-    font-family: 'Updock', Courier;
+    font-family: 'Macondo', Courier;
     font-size: 1.5rem !important;
     color: #decf06;
 }
 
 h3 {
+    font-family: 'Updock', Courier;
     font-size: 3.5rem !important;
     font-weight: bold !important;
     color: rgb(62, 97, 62) !important;
