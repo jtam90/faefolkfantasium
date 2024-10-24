@@ -2,23 +2,17 @@
 @keyframes sparkle-animation {
     0% {
         transform: scale(1);
-        /* Start at normal size */
         opacity: 1;
-        /* Fully visible */
     }
 
     50% {
         transform: scale(1.5);
-        /* Increase size */
         opacity: 0;
-        /* Fade out */
     }
 
     100% {
         transform: scale(1);
-        /* Return to normal size */
         opacity: 1;
-        /* Fully visible */
     }
 }
 
@@ -58,17 +52,12 @@ h1 {
     font-style: normal;
 }
 
-
 h2 {
     font-family: 'Macondo', serif;
     font-size: 2.5rem;
-    /* Size for subheading */
     color: goldenrod;
-    /* Color for subheading */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    /* Shadow */
     margin: 15px 0;
-    /* Spacing */
     text-align: center;
 }
 
@@ -80,8 +69,8 @@ h4 {
 
 p {
     font-family: 'Macondo', Courier;
-    font-size: 1.5rem !important;
-    color: #decf06;
+    font-size: 1.1rem !important;
+    color: rgb(38, 60, 38);
 }
 
 h3 {
@@ -99,39 +88,97 @@ h3 {
     gap: 20px;
     justify-content: center;
     margin-right: 20px;
+    perspective: 1000px; /* Enable 3D perspective */
 }
 
 .card {
-    border: 1px solid #ccc;
-    padding: 20px;
+    position: relative;
     width: 250px;
-    background-color: rgb(255, 245, 109);
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    /* Center the content */
-    opacity: 0.6;
+    height: 350px; /* Set a fixed height to avoid size issues */
+    transition: transform 0.8s; /* Smooth flip transition */
+    transform-style: preserve-3d; /* Allow 3D transformations */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Rotate on hover */
+}
+
+.card-front,
+.card-back {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 8px; 
+    backface-visibility: hidden; /* Hide the back face */
+    pointer-events: auto; /* Ensure events are captured properly */
+}
+
+/* Make the card semi-transparent */
+.card-front {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: rgba(255, 245, 109, 0.6); /* 70% opacity */
 }
 
 .card h3 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.card p {
-    font-size: 1.2rem;
-    color: rgb(62, 97, 62);
-}
-
-.card-actions {
-    margin-top: 15px;
+    font-size: 1.5em; 
+    color: #333; 
 }
 
 .card-image {
     width: 100%; /* Make the image fill the width of the card */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; 
-    object-fit: cover;
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Rotate back face */
+    display: flex; 
+    flex-direction: column; /* Stack description and actions */
+    align-items: center; 
+    justify-content: flex-start; /* Align items to the top */
+    padding: 20px; 
+    text-align: center; 
+    background-color: rgba(255, 245, 109, 0.6); /* 70% opacity for the back */
+    height: 100%; /* Ensure it occupies full height of the card */
+}
+
+.card-back p {
+    margin: 0; /* Reset margin for better spacing */
+    flex: 1; /* Allow this to grow and take up available space */
+    padding: 10px 0; /* Add padding for spacing above and below the text */
+    overflow: hidden; /* Hide overflow if text is too long */
+}
+
+.card-actions {
+    margin-top: 10px; /* Space between description and actions */
+}
+
+.card-actions .btn-edit,
+.card-actions .btn-delete {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card h3 {
+        font-size: 1.5rem; /* Adjust as necessary */
+    }
+
+    .card-back p {
+        padding: 8px 0; /* Smaller padding for smaller screens */
+    }
+}
+
+.card-actions {
+    margin-top: 15px;
 }
 
 .card-actions .btn-edit,
@@ -150,7 +197,6 @@ h3 {
     margin: 5px;
     color: white;
     text-decoration: none;
-    opacity: 0.8;
 }
 
 .btn-add {
@@ -180,17 +226,11 @@ h3 {
 /* Sparkle Class to Apply Animation */
 .sparkle {
     position: absolute;
-    /* Position it relative to the document */
     width: 6px;
-    /* Width of the sparkle */
     height: 6px;
-    /* Height of the sparkle */
     background-color: rgba(255, 251, 0, 0.8);
-    /* White color with some transparency */
     border-radius: 50%;
-    /* Make it a circle */
     pointer-events: none;
-    /* Prevent it from interfering with other mouse events */
     animation: sparkle-animation 1s ease-in-out;
-    /* Apply the sparkle animation */
 }
+

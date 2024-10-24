@@ -8,46 +8,55 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Updock&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
-
 
     <title>Faefolk Fantasium</title>
 </head>
 
 <body>
     <h1 class="princess-sofia-regular">Faefolk Fantasium</h1>
-    <h2 class="macondo-regular">A Whimsical Compendium of Ethereal Beings</h2>>
-</div>
-<div class="add">
-<a href="{{ url_for('create_being') }}" class="btn-add">Add...</a>
-</div>
+    <h2 class="macondo-regular">A Whimsical Compendium of Ethereal Beings</h2>
+
+    <div class="add">
+        <a href="{{ url_for('create_being') }}" class="btn-add">Add...</a>
+    </div>
+
     <div class="card-container">
         {% for being in beings %}
         <div class="card">
-            {% if being.name == "Faery" %}
-                <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
-            {% elif being.name == "Elf" %}
-                <img src="{{ url_for('static', filename='images/elf1.jpg') }}" alt="Elf Image" class="card-image">
+            <div class="card-front">
+                {% if being.name == "Faery" %}
+                    <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
+                {% elif being.name == "Elf" %}
+                    <img src="{{ url_for('static', filename='images/elf1.jpg') }}" alt="Elf Image" class="card-image">
                 {% elif being.name == "Dryad" %}
-                <img src="{{ url_for('static', filename='images/dryad.png') }}" alt="Dryad Image" class="card-image">
+                    <img src="{{ url_for('static', filename='images/dryad.png') }}" alt="Dryad Image" class="card-image">
                 {% elif being.name == "Sprite" %}
-                <img src="{{ url_for('static', filename='images/sprite1.jpg') }}" alt="Sprite Image" class="card-image">
-            {% else %}
-                <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
-            {% endif %}
-            
-            <h3>{{ being.name }}</h3>
-            <p>{{ being.description }}</p>
-            <div class="card-actions">
-                <a href="{{ url_for('edit_being', being_id=being.id) }}" class="btn-edit">Edit</a>
-                <a href="{{ url_for('delete_being', being_id=being.id) }}" class="btn-delete">Delete</a>
+                    <img src="{{ url_for('static', filename='images/sprite1.jpg') }}" alt="Sprite Image" class="card-image">
+                {% else %}
+                    <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
+                {% endif %}
+                
+                <h3>{{ being.name }}</h3>
+            </div>
+            <div class="card-back">
+                <p>{{ being.description }}</p>
+                <div class="card-actions">
+                    <a href="{{ url_for('edit_being', being_id=being.id) }}" class="btn-edit">Edit</a>
+                    <form action="{{ url_for('delete_being', being_id=being.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
+                </div>
             </div>
         </div>
         {% endfor %}
+    </div>
+    
+    
     
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>
+
