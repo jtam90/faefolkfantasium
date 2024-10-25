@@ -18,10 +18,6 @@
     <h1 class="princess-sofia-regular">Faefolk Fantasium</h1>
     <h2 class="macondo-regular">A Whimsical Compendium of Ethereal Beings</h2>
 
-    <div class="add">
-        <a href="{{ url_for('create_being') }}" class="btn-add">Add...</a>
-    </div>
-
     <div class="card-container">
         {% for being in beings %}
         <div class="card">
@@ -52,9 +48,12 @@
         </div>
         {% endfor %}
     </div>
-    
-    
-    
+
+    <!-- Centered Add button below the cards -->
+    <div class="add-button-container">  
+        <a href="{{ url_for('create_being') }}" class="btn-add">Add...</a>
+    </div>
+
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 

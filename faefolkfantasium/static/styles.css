@@ -141,10 +141,11 @@ h3 {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 45px;
     justify-content: center;
     margin-right: 20px;
     perspective: 1000px;
+    padding-top: 40px;
     /* Enable 3D perspective */
 }
 
@@ -158,7 +159,7 @@ h3 {
     transform-style: preserve-3d;
     /* Allow 3D transformations */
     cursor: pointer
-    /* Change cursor to pointer on hover */
+        /* Change cursor to pointer on hover */
 }
 
 .card:hover {
@@ -288,6 +289,15 @@ h3 {
     font-family: 'Macondo', Courier;
     font-size: 1.7rem;
     text-decoration: none;
+}
+
+.add-button-container {
+    display: flex;
+    /* Use flexbox for alignment */
+    justify-content: center;
+    /* Center horizontally */
+    margin: 20px 0;
+    /* Add some vertical spacing */
 }
 
 .btn-edit {
