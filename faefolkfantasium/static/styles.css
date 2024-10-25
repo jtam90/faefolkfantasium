@@ -153,11 +153,11 @@ h3 {
     width: 250px;
     height: 350px;
     /* Set a fixed height to avoid size issues */
-    transition: transform 0.8s;
+    transition: transform 0.4s;
     /* Smooth flip transition */
     transform-style: preserve-3d;
     /* Allow 3D transformations */
-    cursor: pointer;
+    cursor: pointer
     /* Change cursor to pointer on hover */
 }
 
@@ -268,6 +268,7 @@ h3 {
     margin: 5px;
     text-decoration: none;
     border-radius: 4px;
+    outline: none;
 }
 
 .add {
@@ -301,6 +302,9 @@ h3 {
     font-family: 'Macondo', Courier;
     color: rgb(255, 245, 109);
     font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
 }
 
 /* Sparkle Class to Apply Animation */

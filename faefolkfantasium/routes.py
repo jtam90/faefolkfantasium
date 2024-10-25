@@ -6,7 +6,7 @@ from faefolkfantasium.models import Being  # Assuming 'Being' is your model
 @app.route("/")
 def home():
     beings = Being.query.all()  # Query all beings from the database
-    return render_template("home.html", beings=beings)
+    return render_template("index.html", beings=beings)
 
 # Route for Creating a New Being
 @app.route("/create", methods=["GET", "POST"])
