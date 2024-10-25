@@ -31,15 +31,11 @@ h1 {
     margin: 20px 0;
     padding: 10px;
     font-family: 'Princess Sofia', sans-serif;
-    text-align: center;
 }
-
 
 .princess-sofia-regular {
     position: relative;
     font-size: 6rem;
-    color: gold;
-    /* Keeping the gold color */
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
     padding: 10px;
     animation: glowing 2s infinite alternate;
@@ -82,7 +78,6 @@ h1 {
 }
 
 @keyframes sparkle {
-
     0%,
     100% {
         transform: scale(1);
@@ -94,7 +89,6 @@ h1 {
         opacity: 0.5;
     }
 }
-
 
 .macondo-regular {
     font-family: "Macondo", cursive;
@@ -145,26 +139,20 @@ h3 {
     justify-content: center;
     margin-right: 20px;
     perspective: 1000px;
-    padding-top: 40px;
-    /* Enable 3D perspective */
+    padding-top: 40px; /* Enable 3D perspective */
 }
 
 .card {
     position: relative;
     width: 250px;
-    height: 350px;
-    /* Set a fixed height to avoid size issues */
-    transition: transform 0.4s;
-    /* Smooth flip transition */
-    transform-style: preserve-3d;
-    /* Allow 3D transformations */
-    cursor: pointer
-        /* Change cursor to pointer on hover */
+    height: 350px; /* Set a fixed height to avoid size issues */
+    transition: transform 0.4s; /* Smooth flip transition */
+    transform-style: preserve-3d; /* Allow 3D transformations */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .card:hover {
-    transform: rotateY(180deg);
-    /* Rotate on hover */
+    transform: rotateY(180deg); /* Rotate on hover */
 }
 
 .card-front,
@@ -173,10 +161,8 @@ h3 {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    backface-visibility: hidden;
-    /* Hide the back face */
-    pointer-events: auto;
-    /* Ensure events are captured properly */
+    backface-visibility: hidden; /* Hide the back face */
+    pointer-events: auto; /* Ensure events are captured properly */
 }
 
 /* Make the card semi-transparent */
@@ -185,8 +171,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 245, 109, 0.6);
-    /* 70% opacity */
+    background-color: rgba(255, 245, 109, 0.6); /* 70% opacity */
 }
 
 .card h3 {
@@ -195,46 +180,33 @@ h3 {
 }
 
 .card-image {
-    width: 100%;
-    /* Make the image fill the width of the card */
-    height: auto;
-    /* Maintain aspect ratio */
+    width: 100%; /* Make the image fill the width of the card */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
-    object-fit: cover;
-    /* Ensure the image covers the area */
+    object-fit: cover; /* Ensure the image covers the area */
 }
 
 .card-back {
-    transform: rotateY(180deg);
-    /* Rotate back face */
+    transform: rotateY(180deg); /* Rotate back face */
     display: flex;
-    flex-direction: column;
-    /* Stack description and actions */
+    flex-direction: column; /* Stack description and actions */
     align-items: center;
-    justify-content: flex-start;
-    /* Align items to the top */
+    justify-content: flex-start; /* Align items to the top */
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 245, 109, 0.6);
-    /* 70% opacity for the back */
-    height: 100%;
-    /* Ensure it occupies full height of the card */
+    background-color: rgba(255, 245, 109, 0.6); /* 70% opacity for the back */
+    height: 100%; /* Ensure it occupies full height of the card */
 }
 
 .card-back p {
-    margin: 0;
-    /* Reset margin for better spacing */
-    flex: 1;
-    /* Allow this to grow and take up available space */
-    padding: 10px 0;
-    /* Add padding for spacing above and below the text */
-    overflow: hidden;
-    /* Hide overflow if text is too long */
+    margin: 0; /* Reset margin for better spacing */
+    flex: 1; /* Allow this to grow and take up available space */
+    padding: 10px 0; /* Add padding for spacing above and below the text */
+    overflow: hidden; /* Hide overflow if text is too long */
 }
 
 .card-actions {
-    margin-top: 10px;
-    /* Space between description and actions */
+    margin-top: 10px; /* Space between description and actions */
 }
 
 .card-actions .btn-edit,
@@ -248,13 +220,11 @@ h3 {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .card h3 {
-        font-size: 1.5rem;
-        /* Adjust as necessary */
+        font-size: 1.5rem; /* Adjust as necessary */
     }
 
     .card-back p {
-        padding: 8px 0;
-        /* Smaller padding for smaller screens */
+        padding: 8px 0; /* Smaller padding for smaller screens */
     }
 }
 
@@ -292,12 +262,9 @@ h3 {
 }
 
 .add-button-container {
-    display: flex;
-    /* Use flexbox for alignment */
-    justify-content: center;
-    /* Center horizontally */
-    margin: 20px 0;
-    /* Add some vertical spacing */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    margin: 20px 0; /* Add some vertical spacing */
 }
 
 .btn-edit {
@@ -326,4 +293,66 @@ h3 {
     border-radius: 50%;
     pointer-events: none;
     animation: sparkle-animation 1s ease-in-out;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 600px; /* Maximum width of the form */
+    margin: 50px auto; /* Center the form */
+    padding: 20px; /* Padding around the form */
+    background-color: rgba(255, 245, 109, 0.7); /* Background color with transparency */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.form-container h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Heading color */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+label {
+    display: block; /* Labels as block elements */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: goldenrod; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+    background-color: rgb(62, 97, 62); /* Button background */
+    color: rgb(255, 245, 109); /* Button text color */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1.3rem; /* Font size */
+    font-family: 'Macondo', cursive;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(72, 107, 72); /* Darken button on hover */
 }
