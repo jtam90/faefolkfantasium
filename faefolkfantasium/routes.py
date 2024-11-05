@@ -1,6 +1,10 @@
 from flask import render_template, redirect, url_for, request
 from faefolkfantasium import app, db
 from faefolkfantasium.models import Being  # Assuming 'Being' is your model
+from werkzeug.utils import secure_filename
+import os
+
+app.config['UPLOAD_FOLDER'] = 'static/uploads'  # Ensure this folder exists
 
 # Home Route
 @app.route("/")
@@ -16,8 +20,17 @@ def create_being():
         name = request.form.get("name")
         description = request.form.get("description")
 
-        # Create a new Being object
-        new_being = Being(name=name, description=description)
+        # Handle file upload for a new image
+        if 'image' in request.files:
+            file = request.files['image']
+            if file and file.filename != '':
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                new_being = Being(name=name, description=description, image_path=filename)
+            else:
+                new_being = Being(name=name, description=description)  # No image provided
+        else:
+            new_being = Being(name=name, description=description)  # No image provided
 
         # Add to database
         db.session.add(new_being)
@@ -30,13 +43,24 @@ def create_being():
 # Route for Editing an Existing Being
 @app.route("/edit/<int:being_id>", methods=["GET", "POST"])
 def edit_being(being_id):
-    being = Being.query.get(being_id)
+    being = Being.query.get_or_404(being_id)  # Fetch the being or return 404 if not found
     if request.method == "POST":
         being.name = request.form.get("name")
         being.description = request.form.get("description")
+
+        # Handle file upload for a new image
+        if 'image' in request.files:
+            file = request.files['image']
+            if file and file.filename != '':
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                being.image_path = filename  # Update the being's image path if a new file was uploaded
+
+        # Save changes to the database
         db.session.commit()
-        return redirect(url_for("home"))
-    return render_template("create_being.html", being=being)
+        return redirect(url_for("home"))  # Redirect to home page after editing
+
+    return render_template("edit_being.html", being=being)  # Pass the existing being data to the template
 
 # Route for Deleting a Being
 @app.route("/delete/<int:being_id>", methods=["POST"])
@@ -45,40 +69,5 @@ def delete_being(being_id):
     if request.method == "POST":
         db.session.delete(being)
         db.session.commit()
-        return redirect(url_for("home"))
+        return redirect(url_for("home"))  # Redirect to home page after deletion
 
-from flask import Flask, request, redirect, url_for
-from werkzeug.utils import secure_filename
-import os
-
-@app.route('/upload_image', methods=['POST'])
-def upload_image():
-    # Print statements for debugging
-    print("Form submitted")
-
-    # Check if any file part is present in request
-    if 'image' not in request.files:
-        print("No file part in request")
-        return redirect(request.url)
-
-    # Get the file from the request
-    file = request.files['image']
-    if file.filename == '':
-        print("No file selected")
-        return redirect(request.url)
-
-    # Process file if available
-    if file:
-        # Use secure filename and save to upload folder
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        print(f"File {filename} saved successfully")
-
-        # Retrieve other form fields
-        name = request.form.get('name')
-        description = request.form.get('description')
-        print(f"Name: {name}, Description: {description}")
-
-        # After saving the file and getting the form data, you could store it in a database
-        # return a success message
-        return "Image uploaded successfully with name and description"

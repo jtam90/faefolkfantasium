@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Edit Ethereal Being</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Updock&display=swap" rel="stylesheet">
+
+    <title>Edit Being</title>
 </head>
+
 <body>
     <h3>Edit {{ being.name }}</h3>
 
-    <!-- Form for updating being details -->
-    <form method="POST" action="{{ url_for('edit_being', being_id=being.id) }}">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ being.name }}" required>
-        <br>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required>{{ being.description }}</textarea>
-        <br>
-        <button type="submit">Update Being</button>
-    </form>
+    <div class="form-container">
+        <form action="{{ url_for('edit_being', being_id=being.id) }}" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ being.name }}" required>
+            <br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required>{{ being.description }}</textarea>
+            <br>
+
+            <!-- Display current image if it exists -->
+            {% if being.image_path %}
+                <div class="current-image">
+                    <h4>Current Image:</h4>
+                    <img src="{{ url_for('static', filename='uploads/' + being.image_path) }}" alt="Current Image" style="max-width: 200px;">
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="image">Upload New Image (optional):</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Update Being</button>
+            </div>
+        </form>
+    </div>
 
     <a href="{{ url_for('home') }}">Back to Catalogue</a>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
+
 </html>
+
