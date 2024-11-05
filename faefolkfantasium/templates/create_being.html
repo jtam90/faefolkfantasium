@@ -18,12 +18,18 @@
     <h2>Create a New Being</h2>
 
     <div class="form-container">
-        <form method="POST">
+        <form action="{{ url_for('create_being') }}" method="POST" enctype="multipart/form-data">
             <label for="name">Name of Being:</label>
             <input type="text" name="name" id="name" required>
 
             <label for="description">Description:</label>
             <textarea name="description" id="description" required></textarea>
+
+            <!-- Form for uploading an image -->
+            <div class="form-group">
+                <label for="image">Add Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
 
             <div class="button-container">
                 <button type="submit" class="btn-add">Create Being</button>

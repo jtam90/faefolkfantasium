@@ -51,18 +51,34 @@ from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads'
-
 @app.route('/upload_image', methods=['POST'])
 def upload_image():
+    # Print statements for debugging
+    print("Form submitted")
+
+    # Check if any file part is present in request
     if 'image' not in request.files:
+        print("No file part in request")
         return redirect(request.url)
+
+    # Get the file from the request
     file = request.files['image']
     if file.filename == '':
+        print("No file selected")
         return redirect(request.url)
+
+    # Process file if available
     if file:
+        # Use secure filename and save to upload folder
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        # You can also store the filename in the database to associate it with a record
-        return "Image uploaded successfully"
+        print(f"File {filename} saved successfully")
+
+        # Retrieve other form fields
+        name = request.form.get('name')
+        description = request.form.get('description')
+        print(f"Name: {name}, Description: {description}")
+
+        # After saving the file and getting the form data, you could store it in a database
+        # return a success message
+        return "Image uploaded successfully with name and description"
