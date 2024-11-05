@@ -28,10 +28,12 @@ h1 {
     font-size: 6rem;
     color: gold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin: 20px 0;
+    margin: 0 auto 10px; /* Center horizontally and set space below */
     padding: 10px;
     font-family: 'Princess Sofia', sans-serif;
+    text-align: center; /* Center-align text */
 }
+
 
 .princess-sofia-regular {
     position: relative;
@@ -57,8 +59,8 @@ h1 {
 .princess-sofia-regular::after {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
@@ -107,8 +109,8 @@ h2 {
     font-size: 2.5rem;
     color: goldenrod;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin: 15px 0;
-    padding-top: 20px;
+    margin: 0 auto; /* Center horizontally */
+    padding-top: 30px;
     text-align: center;
 }
 
@@ -140,7 +142,7 @@ h3 {
     justify-content: center;
     margin-right: 20px;
     perspective: 1000px;
-    padding-top: 40px; /* Enable 3D perspective */
+    padding-top: 70px; /* Enable 3D perspective */
 }
 
 .card {
@@ -217,6 +219,17 @@ h3 {
     margin: 5px;
     text-decoration: none;
 }
+
+input[type="file"] {
+    font-family: 'Macondo', cursive;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 95%;
+    margin: 10px auto;
+    font-size: 1rem;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 600px) {

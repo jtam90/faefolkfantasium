@@ -46,3 +46,23 @@ def delete_being(being_id):
         db.session.delete(being)
         db.session.commit()
         return redirect(url_for("home"))
+
+from flask import Flask, request, redirect, url_for
+from werkzeug.utils import secure_filename
+import os
+
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+
+@app.route('/upload_image', methods=['POST'])
+def upload_image():
+    if 'image' not in request.files:
+        return redirect(request.url)
+    file = request.files['image']
+    if file.filename == '':
+        return redirect(request.url)
+    if file:
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # You can also store the filename in the database to associate it with a record
+        return "Image uploaded successfully"
