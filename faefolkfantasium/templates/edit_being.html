@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <h3>Edit {{ being.name }}</h3>
+    <h2>Edit {{ being.name }}</h2>
 
     <div class="form-container">
         <form action="{{ url_for('edit_being', being_id=being.id) }}" method="POST" enctype="multipart/form-data">
@@ -45,8 +45,9 @@
             </div>
         </form>
     </div>
+    
+    <a href="{{ url_for('home') }}" class="btn-add" id="back-link">Back to Catalogue</a>
 
-    <a href="{{ url_for('home') }}">Back to Catalogue</a>
 
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
