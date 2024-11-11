@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = '6f07d007de9eaa171ac81830ea8235'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////workspace/faefolkfantasium/instance/beings.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

@@ -302,6 +302,19 @@ input[type="file"] {
     border: none;
 }
 
+/* Custom styling for the "Choose File" button */
+.btn-add.custom-file-upload {
+    font-size: 1.2rem; /* Smaller font size */
+    cursor: pointer;
+}
+
+#file-name {
+    margin-left: 10px;
+    font-size: 1rem;
+    color: rgb(62, 97, 62); /* Optional: Match it with the button style */
+}
+
+
 #back-link {
     margin-left: 30px;
 }

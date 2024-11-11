@@ -19,6 +19,7 @@
 
     <div class="form-container">
         <form action="{{ url_for('edit_being', being_id=being.id) }}" method="POST" enctype="multipart/form-data">
+        
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{ being.name }}" required>
             <br>
@@ -36,8 +37,12 @@
             {% endif %}
 
             <div class="form-group">
-                <label for="image">Upload New Image (optional):</label>
-                <input type="file" id="image" name="image" accept="image/*">
+                <label>Upload Image (optional):</label>
+                <div class="file-upload">
+                    <label for="image" class="btn-add custom-file-upload">Choose File</label>
+                    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+                    <span id="file-name">No file chosen</span>
+                </div>
             </div>
 
             <div class="button-container">

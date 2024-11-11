@@ -16,25 +16,29 @@
 </head>
 
 <body>
-    <h2>Create a New Being</h2>
+    <h2>Create A New Being</h2>
 
     <div class="form-container">
-        <!-- Updated the form to include enctype for file upload -->
-        <form action="{{ url_for('create_being') }}" method="POST" enctype="multipart/form-data">
-            <label for="name">Name of Being:</label>
-            <input type="text" name="name" id="name" required>
+        <form action="{{ url_for('create_being') }}" method="POST" enctype="multipart/form-data" id="create-being-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
 
             <label for="description">Description:</label>
-            <textarea name="description" id="description" required></textarea>
+            <textarea id="description" name="description" required></textarea>
+            <br>
 
-            <!-- Form for uploading an image -->
             <div class="form-group">
-                <label for="image">Add Image:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
+                <label>Upload Image (optional):</label>
+                <div class="file-upload">
+                    <label for="image" class="btn-add custom-file-upload">Choose File</label>
+                    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+                    <span id="file-name">No file chosen</span>
+                </div>
             </div>
 
             <div class="button-container">
-                <button type="submit" class="btn-add">Create Being</button>
+                <button type="submit">Create Being</button>
             </div>
         </form>
     </div>

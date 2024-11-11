@@ -1,16 +1,21 @@
-from flask import render_template, redirect, url_for, request, flash  # flash added for feedback on errors
+from flask import render_template, redirect, url_for, request, flash
 from faefolkfantasium import app, db
 from faefolkfantasium.models import Being  # Assuming 'Being' is your model
 from werkzeug.utils import secure_filename
 import os
 
 # Configuration for upload folder and allowed file extensions
-app.config['UPLOAD_FOLDER'] = 'faefolkfantasium/static/uploads'  # Make sure this directory exists
+app.config['UPLOAD_FOLDER'] = '/workspace/faefolkfantasium/static/uploads'  # Ensure this directory exists
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
 # Utility function to check if file extension is allowed
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+
+# Route to display the image
+@app.route('/uploads/<filename>')
+def display_image(filename):
+    return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 # Home Route
 @app.route("/")
@@ -18,9 +23,12 @@ def home():
     beings = Being.query.all()  # Query all beings from the database
     return render_template("index.html", beings=beings)
 
+
 # Route for Creating a New Being
 @app.route("/create", methods=["GET", "POST"])
 def create_being():
+    image_path = None  # Initialize as None
+
     if request.method == "POST":
         # Get the form data
         name = request.form.get("name")
@@ -46,12 +54,16 @@ def create_being():
             else:
                 flash("Invalid file type. Please upload a PNG, JPG, JPEG, or GIF image.")
 
-        # Add being to database
+        # Add the new being to the database
         db.session.add(new_being)
-        db.session.commit()
+        db.session.commit()  # Make sure the new being is committed to the database
+
+        flash(f"Successfully created a new being: {name}")
         return redirect(url_for("home"))
 
-    return render_template("create_being.html")
+    return render_template("create_being.html", image_path=image_path)  # Pass image_path to template
+
+
 
 # Route for Editing an Existing Being
 @app.route("/edit/<int:being_id>", methods=["GET", "POST"])
@@ -92,6 +104,7 @@ def delete_being(being_id):
     if request.method == "POST":
         db.session.delete(being)
         db.session.commit()
+        flash(f"Successfully deleted the being: {being.name}")
         return redirect(url_for("home"))
 
 # Route for handling uploads specifically, if needed
@@ -114,3 +127,4 @@ def upload_image():
     else:
         flash("Allowed file types are png, jpg, jpeg, gif.")
         return redirect(url_for("create_being"))
+
