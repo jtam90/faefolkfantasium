@@ -303,10 +303,15 @@ input[type="file"] {
 }
 
 .footer-style {
-    font-family: 'Macondo', serif;
-    font-size: 1rem;
-    color: goldenrod;
-    text-align: center;
+    font-family: 'Macondo', serif !important;
+    font-size: 2rem !important;
+    color: goldenrod !important;
+    text-align: center !important;
+    margin: 20px !important;
+}
+
+footer {
+    display: block !important;
 }
 
 #back-link {
