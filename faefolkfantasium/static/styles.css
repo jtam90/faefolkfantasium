@@ -302,16 +302,19 @@ input[type="file"] {
     border: none;
 }
 
-.footer-style {
-    font-family: 'Macondo', serif !important;
-    font-size: 2rem !important;
+footer.footer-style {
+    font-family: 'Macondo', serif;
+    font-size: 2rem;
     color: goldenrod !important;
-    text-align: center !important;
-    margin: 20px !important;
+    text-align: center;
+    margin: 20px;
+    background-color: #333;
+    padding: 10px;
 }
 
-footer {
-    display: block !important;
+footer .footer-text {
+    font-size: 1.2rem; /* Adjust the size if needed */
+    color:goldenrod; /* You can customize the color here */
 }
 
 #back-link {
