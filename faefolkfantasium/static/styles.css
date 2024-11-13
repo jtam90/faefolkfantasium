@@ -22,6 +22,15 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     cursor: url("/static/cursor/cursor.png"), auto;
+    margin: 0;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1; /* Takes up remaining space */
+    padding-bottom: 60px;
 }
 
 h1 {
@@ -304,17 +313,22 @@ input[type="file"] {
 
 footer.footer-style {
     font-family: 'Macondo', serif;
-    font-size: 2rem;
-    color: goldenrod !important;
+    font-size: 2rem; /* Font size for the whole footer */
+    color: goldenrod !important; /* Text color for the whole footer */
     text-align: center;
-    margin: 20px;
-    background-color: #333;
-    padding: 10px;
+    padding: 20px 0; /* Add some padding to the top and bottom of the footer */
+    margin: 0; /* Remove margin */
+    position: relative; /* Keeps it in normal document flow */
+    width: 100%; /* Ensure the footer spans the full width */
 }
 
+/* Apply to the text inside the footer */
 footer .footer-text {
-    font-size: 1.2rem; /* Adjust the size if needed */
-    color:goldenrod; /* You can customize the color here */
+    font-family: inherit; /* Inherit the font family from the parent */
+    color: goldenrod !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    margin: 0; /* Remove any margin from the paragraph */
 }
 
 #back-link {
