@@ -29,17 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const imageInput = document.getElementById("image");
-    const fileNameDisplay = document.getElementById("file-name");
-
-    // Only run if #image element exists on the page
-    if (imageInput && fileNameDisplay) {
-        imageInput.addEventListener("change", function () {
-            const fileName = this.files.length > 0 ? this.files[0].name : "No file chosen";
-            fileNameDisplay.textContent = fileName;
-        });
-    } else {
-        console.log("Image input not found on this page, skipping file input script.");
-    }
-});
+function confirmDelete() {
+    return window.confirm("Are you sure you want to delete this being?");
+}
