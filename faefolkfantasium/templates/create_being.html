@@ -20,6 +20,7 @@
 
     <div class="form-container">
         <form action="{{ url_for('create_being') }}" method="POST" enctype="multipart/form-data" id="create-being-form">
+
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -33,6 +34,7 @@
                 <div class="file-upload">
                     <label for="image" class="btn-add custom-file-upload">Choose File</label>
                     <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+
                     <span id="file-name">No file chosen</span>
                 </div>
             </div>
@@ -45,7 +47,10 @@
 
     <a href="{{ url_for('home') }}" class="btn-add" id="back-link">Back to Catalogue</a>
 
+    
     <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+
 </body>
 
 </html>

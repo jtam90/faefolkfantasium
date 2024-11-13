@@ -22,17 +22,21 @@
         {% for being in beings %}
         <div class="card">
             <div class="card-front">
-                {% if being.name == "Faery" %}
-                    <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
-                {% elif being.name == "Elf" %}
-                    <img src="{{ url_for('static', filename='images/elf1.jpg') }}" alt="Elf Image" class="card-image">
-                {% elif being.name == "Dryad" %}
-                    <img src="{{ url_for('static', filename='images/dryad.png') }}" alt="Dryad Image" class="card-image">
-                {% elif being.name == "Sprite" %}
-                    <img src="{{ url_for('static', filename='images/sprite1.jpg') }}" alt="Sprite Image" class="card-image">
-                {% else %}
-                    <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
-                {% endif %}
+                {% if being.image_path %}
+                <!-- Display uploaded images if image_path is set -->
+                <img src="{{ url_for('static', filename='uploads/' + being.image_path) }}" alt="{{ being.name }} Image" class="card-image">
+            {% elif being.name == "Faery" %}
+                <img src="{{ url_for('static', filename='images/faery.jpg') }}" alt="Faery Image" class="card-image">
+            {% elif being.name == "Elf" %}
+                <img src="{{ url_for('static', filename='images/elf1.jpg') }}" alt="Elf Image" class="card-image">
+            {% elif being.name == "Dryad" %}
+                <img src="{{ url_for('static', filename='images/dryad.png') }}" alt="Dryad Image" class="card-image">
+            {% elif being.name == "Sprite" %}
+                <img src="{{ url_for('static', filename='images/sprite1.jpg') }}" alt="Sprite Image" class="card-image">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/placeholder-leaf.jpg') }}" alt="Placeholder Image" class="card-image">
+            {% endif %}
+t y b            
                 
                 <h3>{{ being.name }}</h3>
             </div>

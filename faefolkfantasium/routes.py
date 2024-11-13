@@ -4,10 +4,6 @@ from faefolkfantasium.models import Being  # Assuming 'Being' is your model
 from werkzeug.utils import secure_filename
 import os
 
-# Configuration for upload folder and allowed file extensions
-app.config['UPLOAD_FOLDER'] = '/workspace/faefolkfantasium/static/uploads'  # Ensure this directory exists
-app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
-
 # Utility function to check if file extension is allowed
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
@@ -38,21 +34,22 @@ def create_being():
         new_being = Being(name=name, description=description)
 
         # Handle file upload for a new image
-        if 'image' in request.files:
-            file = request.files['image']
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    if 'image' in request.files:
+        file = request.files['image']
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
-                # Save the file and update image path in the model
-                try:
-                    file.save(upload_path)
-                    new_being.image_path = filename  # Update the being's image path with filename
-                except FileNotFoundError:
-                    flash("The upload folder does not exist or is inaccessible. Please check configuration.")
-                    return redirect(url_for("create_being"))
-            else:
-                flash("Invalid file type. Please upload a PNG, JPG, JPEG, or GIF image.")
+        try:
+            file.save(upload_path)
+            new_being.image_path = filename  # Save the image filename in the database
+            print(f"Image Path Saved: {new_being.image_path}")  # Debugging line
+        except FileNotFoundError:
+            flash("The upload folder does not exist or is inaccessible. Please check configuration.")
+            return redirect(url_for("create_being"))
+    else:
+        flash("Invalid file type. Please upload a PNG, JPG, JPEG, or GIF image.")
+
 
         # Add the new being to the database
         db.session.add(new_being)
