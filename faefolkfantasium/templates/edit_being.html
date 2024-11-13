@@ -18,37 +18,20 @@
     <h2>Edit {{ being.name }}</h2>
 
     <div class="form-container">
-        <form action="{{ url_for('edit_being', being_id=being.id) }}" method="POST" enctype="multipart/form-data">
-        
+        <form action="{{ url_for('edit_being', being_id=being.id) }}" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{ being.name }}" required>
             <br>
-
+        
             <label for="description">Description:</label>
             <textarea id="description" name="description" required>{{ being.description }}</textarea>
             <br>
-
-            <!-- Display current image if it exists -->
-            {% if being.image_path %}
-                <div class="current-image">
-                    <h4>Current Image:</h4>
-                    <img src="{{ url_for('static', filename='uploads/' + being.image_path) }}" alt="Current Image" style="max-width: 200px;">
-                </div>
-            {% endif %}
-
-            <div class="form-group">
-                <label>Upload Image (optional):</label>
-                <div class="file-upload">
-                    <label for="image" class="btn-add custom-file-upload">Choose File</label>
-                    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
-                    <span id="file-name">No file chosen</span>
-                </div>
-            </div>
-
+        
             <div class="button-container">
                 <button type="submit">Update Being</button>
             </div>
         </form>
+        
     </div>
     
     <a href="{{ url_for('home') }}" class="btn-add" id="back-link">Back to Catalogue</a>
