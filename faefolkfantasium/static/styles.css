@@ -16,6 +16,7 @@
     }
 }
 
+/* Styling for body */
 body {
     background-image: url("/static/images/background-image.jpg");
     background-size: cover;
@@ -23,16 +24,17 @@ body {
     background-repeat: no-repeat;
     cursor: url("/static/cursor/cursor.png"), auto;
     margin: 0;
-    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
 }
 
 .content {
-    flex-grow: 1; /* Takes up remaining space */
+    flex-grow: 1; 
     padding-bottom: 60px;
 }
 
+/* Styling for text */
 h1 {
     font-size: 6rem;
     color: gold;
@@ -101,6 +103,7 @@ h1 {
     }
 }
 
+/* Font family styling */
 .macondo-regular {
     font-family: "Macondo", cursive;
     font-weight: 400;
@@ -113,6 +116,7 @@ h1 {
     font-style: normal;
 }
 
+/* h2, h4, p, h3 styling */
 h2 {
     font-family: 'Macondo', serif;
     font-size: 2.5rem;
@@ -145,6 +149,7 @@ h3 {
     text-align: center;
 }
 
+/* Card styling */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -158,14 +163,15 @@ h3 {
 .card {
     position: relative;
     width: 250px;
-    height: 350px; /* Set a fixed height to avoid size issues */
-    transition: transform 0.4s; /* Smooth flip transition */
-    transform-style: preserve-3d; /* Allow 3D transformations */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    height: 350px; 
+    transition: transform 0.4s; 
+    transform-style: preserve-3d; 
+    cursor: pointer; 
 }
 
+/* Card rotate on hover effect */
 .card:hover {
-    transform: rotateY(180deg); /* Rotate on hover */
+    transform: rotateY(180deg); 
 }
 
 .card-front,
@@ -174,17 +180,17 @@ h3 {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    backface-visibility: hidden; /* Hide the back face */
-    pointer-events: auto; /* Ensure events are captured properly */
+    backface-visibility: hidden; 
+    pointer-events: auto; 
 }
 
-/* Make the card semi-transparent */
+/* Styling to make the card semi-transparent */
 .card-front {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(234, 242, 118, 0.7); /* 70% opacity */
+    background-color: rgba(234, 242, 118, 0.7); 
 }
 
 .card h3 {
@@ -192,36 +198,39 @@ h3 {
     color: #333;
 }
 
+/* Styling for card images */
 .card-image {
-    width: 100%; /* Make the image fill the width of the card */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto; 
     border-radius: 8px;
-    object-fit: cover; /* Ensure the image covers the area */
+    object-fit: cover; 
 }
 
+/* Styling for back of the card */
 .card-back {
-    transform: rotateY(180deg); /* Rotate back face */
+    transform: rotateY(180deg); 
     display: flex;
-    flex-direction: column; /* Stack description and actions */
+    flex-direction: column; 
     align-items: center;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: flex-start; 
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 245, 109, 0.6); /* 70% opacity for the back */
-    height: 100%; /* Ensure it occupies full height of the card */
+    background-color: rgba(255, 245, 109, 0.6); 
+    height: 100%; 
 }
 
 .card-back p {
-    margin: 0; /* Reset margin for better spacing */
-    flex: 1; /* Allow this to grow and take up available space */
-    padding: 10px 0; /* Add padding for spacing above and below the text */
-    overflow: hidden; /* Hide overflow if text is too long */
+    margin: 0; 
+    flex: 1; 
+    padding: 10px 0; 
+    overflow: hidden; 
 }
 
 .card-actions {
-    margin-top: 10px; /* Space between description and actions */
+    margin-top: 10px; 
 }
 
+/* Styling for card buttons */
 .card-actions .btn-edit,
 .card-actions .btn-delete {
     display: inline-block;
@@ -230,6 +239,7 @@ h3 {
     text-decoration: none;
 }
 
+/* Styling for input fields */
 input[type="file"] {
     font-family: 'Macondo', cursive;
     padding: 5px;
@@ -243,11 +253,11 @@ input[type="file"] {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .card h3 {
-        font-size: 1.5rem; /* Adjust as necessary */
+        font-size: 1.5rem; 
     }
 
     .card-back p {
-        padding: 8px 0; /* Smaller padding for smaller screens */
+        padding: 8px 0; 
     }
 }
 
@@ -265,6 +275,7 @@ input[type="file"] {
     outline: none;
 }
 
+/* Styling for add button */
 .add {
     display: flex;
     justify-content: left;
@@ -289,11 +300,12 @@ input[type="file"] {
 }
 
 .add-button-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    margin: 20px 0; /* Add some vertical spacing */
+    display: flex; 
+    justify-content: center; 
+    margin: 20px 0; 
 }
 
+/* Styling for edit button */
 .btn-edit {
     background-color: rgb(62, 97, 62);
     font-family: 'Macondo', Courier;
@@ -301,6 +313,7 @@ input[type="file"] {
     font-size: 1.2rem;
 }
 
+/* Styling for delete button */
 .btn-delete {
     background-color: #dc7601;
     font-family: 'Macondo', Courier;
@@ -311,31 +324,31 @@ input[type="file"] {
     border: none;
 }
 
+/* Styling for footer */
 footer.footer-style {
     font-family: 'Macondo', serif;
-    font-size: 2rem; /* Font size for the whole footer */
-    color: goldenrod !important; /* Text color for the whole footer */
+    font-size: 2rem; 
+    color: goldenrod !important; 
     text-align: center;
-    padding: 20px 0; /* Add some padding to the top and bottom of the footer */
-    margin: 0; /* Remove margin */
-    position: relative; /* Keeps it in normal document flow */
-    width: 100%; /* Ensure the footer spans the full width */
-}
+    padding: 20px 0; 
+    margin: 0; 
+    position: relative; 
+    width: 100%; 
 
-/* Apply to the text inside the footer */
 footer .footer-text {
-    font-family: inherit; /* Inherit the font family from the parent */
+    font-family: inherit;
     color: goldenrod !important;
     font-size: 1.5rem !important;
     font-weight: bold !important;
-    margin: 0; /* Remove any margin from the paragraph */
+    margin: 0; 
 }
 
+/* Styling for back button */
 #back-link {
     margin-left: 30px;
 }
 
-/* Sparkle Class to Apply Animation */
+/* Sparkle Class to apply animation */
 .sparkle {
     position: absolute;
     width: 6px;
@@ -346,27 +359,27 @@ footer .footer-text {
     animation: sparkle-animation 1s ease-in-out;
 }
 
-/* Form Styles */
+/* Styling for form */
 .form-container {
-    max-width: 350px; /* Maximum width of the form */
-    margin: 50px auto; /* Center the form */
-    padding: 30px; /* Padding around the form */
-    background-color: rgba(234, 242, 118, 0.7); /* Background color with transparency */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack children vertically */
+    max-width: 350px; 
+    margin: 50px auto; 
+    padding: 30px; 
+    background-color: rgba(234, 242, 118, 0.7); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
 }
 
 .form-group {
-    margin-bottom: 15px; /* Space between form groups */
+    margin-bottom: 15px; 
 }
 
 label {
-    display: block; /* Labels as block elements */
-    margin-bottom: 5px; /* Space below labels */
-    font-weight: bold; /* Bold text for labels */
+    display: block;
+    margin-bottom: 5px; 
+    font-weight: bold; 
     font-family: 'Macondo', cursive;
     font-size: 1.5rem;
     color:rgb(38, 60, 38);
@@ -376,43 +389,44 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-    width:95%; /* Full width inputs */
-    padding: 10px; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Font size */
+    width:95%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1rem; 
     margin: 10px auto;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: goldenrod; /* Border color on focus */
-    outline: none; /* Remove default outline */
+    border-color: goldenrod; 
+    outline: none; 
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical; 
     align-items: center;
 }
 
+/* Styling for submit button */
 button[type="submit"] {
-    background-color: rgb(62, 97, 62); /* Button background */
-    color: rgb(255, 245, 109); /* Button text color */
-    padding: 10px 15px; /* Padding for button */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for button */
-    font-size: 1.3rem; /* Font size */
+    background-color: rgb(62, 97, 62); 
+    color: rgb(255, 245, 109); 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px;
+    font-size: 1.3rem; 
     font-family: 'Macondo', cursive;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+    cursor: pointer; 
+    transition: background-color 0.3s;
 }
 
 .button-container {
-    text-align: center; /* Center button inside its container */
+    text-align: center; 
     margin-top: 10px; 
 }
 
 button[type="submit"]:hover {
-    background-color: rgb(72, 107, 72); /* Darken button on hover */
-}
+    background-color: rgb(72, 107, 72); 
+}}
