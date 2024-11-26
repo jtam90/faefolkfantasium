@@ -1,7 +1,9 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
+migrate = Migrate(app, db)
 app = Flask(__name__)
 
 # Set the secret key for sessions and other secure features
