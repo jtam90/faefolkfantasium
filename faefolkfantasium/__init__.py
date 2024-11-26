@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Set the secret key for sessions and other secure features
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', '7d81f958ff96f923e4329635a01f91ce48238be3260d1d7a')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # Check if running on Heroku (DATABASE_URL will be set on Heroku)
 if 'DATABASE_URL' in os.environ:
