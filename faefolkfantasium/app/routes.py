@@ -1,8 +1,12 @@
 from flask import render_template, redirect, url_for, request, flash
-from faefolkfantasium import app, db
-from faefolkfantasium.models import Being  # Assuming 'Being' is your model
+from . import db  # Import db from the current package
+from .models import Being  
 from werkzeug.utils import secure_filename
 import os
+from . import create_app
+
+# Create the app instance
+app = create_app()
 
 # Utility function to check if file extension is allowed
 def allowed_file(filename):
@@ -38,7 +42,6 @@ def create_being():
         return redirect(url_for("home"))
 
     return render_template("create_being.html")  # No need to pass image_path anymore
-
 
 # Route for Editing an Existing Being
 @app.route("/edit/<int:being_id>", methods=["GET", "POST"])
@@ -86,4 +89,3 @@ def upload_image():
     else:
         flash("Allowed file types are png, jpg, jpeg, gif.")
         return redirect(url_for("create_being"))
-

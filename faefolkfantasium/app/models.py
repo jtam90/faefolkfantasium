@@ -1,4 +1,6 @@
-from faefolkfantasium import db
+from . import db  # Assuming `db` is initialized in `faefolkfantasium/app/__init__.py`
+
+
 
 class Being(db.Model):
     id = db.Column(db.Integer, primary_key=True)
