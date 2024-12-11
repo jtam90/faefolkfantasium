@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -35,6 +35,10 @@ def create_app():
     # Disable Flask-SQLAlchemy event system to save memory and avoid warnings
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+    # Set upload folder and allowed file extensions
+    app.config['UPLOAD_FOLDER'] = os.getenv('UPLOAD_FOLDER', 'static/uploads')  # Default to 'static/uploads'
+    app.config['ALLOWED_EXTENSIONS'] = set(os.getenv('ALLOWED_EXTENSIONS', 'png,jpg,jpeg,gif').split(','))  # Default extensions
+
     # Initialize the database and migration with the app
     db.init_app(app)
     migrate.init_app(app, db)
@@ -46,4 +50,3 @@ def create_app():
     from . import routes  # Ensure that routes.py uses `app.route` directly
 
     return app
-
