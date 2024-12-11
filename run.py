@@ -5,9 +5,9 @@ from faefolkfantasium.app import create_app
 app = create_app()
 
 if __name__ == "__main__":
-    # Open the browser automatically
-    webbrowser.open("http://127.0.0.1:5000")
-    app.run(debug=True, use_reloader=False)
+    # Open the browser automatically to the correct Gitpod port
+    webbrowser.open("http://localhost:8081")
+    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=False)
 
 
 
