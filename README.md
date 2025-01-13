@@ -42,11 +42,11 @@ I have used the following fonts:
 
 "Macondo" for the smaller headers and buttons:
 
-![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/static/images/macondo-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/faefolkfantasium/static/images/macondo-font.png?raw=true)
       
 "Updock" for the card titles:
       
-![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/static/images/updock-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/faefolkfantasium/static/images/updock-font.png?raw=true)
 
 I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
 
