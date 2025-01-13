@@ -20,7 +20,7 @@ As a User...
 ## Colour Scheme
 Below represents the different colors used in this project:
 
-- ![#eaf276](https://via.placeholder.com/15/eaf276/000000?text=+) `#eaf276`
+- ![#eaf276](https://camo.githubusercontent.com/79fffb1abe006e00b1c37f9c37df75bcf2be767be3fc2df36129b06ebdc62ee8/68747470733a2f2f7669612e706c616365686f6c6465722e636f6d2f31352f6561663237362f3030303030303f746578743d2b) `#eaf276`
 - ![#fff56d](https://via.placeholder.com/15/fff56d/000000?text=+) `#fff56d`
 - ![#fffb00](https://via.placeholder.com/15/fffb00/000000?text=+) `#fffb00`
 - ![#486b48](https://via.placeholder.com/15/486b48/000000?text=+) `#486b48`
@@ -33,19 +33,19 @@ I chose these colours for specific earthy tones which represent the ethereal, fa
 
 ## Typography
 
-- I have used the following fonts: 
+I have used the following fonts: 
       
 "Princess Sofia" as the font for the main header:
 
-![Font Image](/static/images/princess-sofia-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/static/images/princess-sofia-font.png)
 
 "Macondo" for the smaller headers and buttons:
 
-![Font Image](/static/images/macondo-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/static/images/macondo-font.png)
       
 "Updock" for the card titles:
       
-![Font Image](/static/images/updock-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/static/images/updock-font.png)
 
 I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
 
