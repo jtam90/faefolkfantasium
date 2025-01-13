@@ -37,7 +37,7 @@ I have used the following fonts:
       
 "Princess Sofia" as the font for the main header:
 
-![Font Image](https://raw.githubusercontent.com/jtam90/faefolkfantasium/main/static/images/princess-sofia-font.png)
+![Font Image](https://github.com/jtam90/faefolkfantasium/blob/main/faefolkfantasium/static/images/princess-sofia-font.png?raw=true)
 
 
 "Macondo" for the smaller headers and buttons:
