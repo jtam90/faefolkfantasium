@@ -30,11 +30,21 @@ For my Milestone Project 3 in L5 Web Application Development, I have created a F
       - #263c26
       - #dc7601
       
-      I chose these colours for specific earthy tones which represents the ethereal, fantasy world in which these beings dwell.
+      I chose these colours for specific earthy tones which represent the ethereal, fantasy world in which these beings dwell.
 
       ## Typography
 
-      - 
+      - I have used the following fonts: 
+      
+      "Princess Sofia" as the font for the main header:
+      
+      "Macondo" for the smaller headers and buttons:
+      
+      "Updock" for the card titles:
+      
+      I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
+
+
 
 
 
