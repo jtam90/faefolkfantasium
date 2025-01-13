@@ -37,15 +37,15 @@ I chose these colours for specific earthy tones which represent the ethereal, fa
       
 "Princess Sofia" as the font for the main header:
 
-![Font Image](static/images/princess-sofia-font.png)
+![Font Image](/static/images/princess-sofia-font.png)
 
 "Macondo" for the smaller headers and buttons:
 
-![Font Image](static/images/macondo-font.png)
+![Font Image](/static/images/macondo-font.png)
       
 "Updock" for the card titles:
       
-![Font Image](static/images/updock-font.png)
+![Font Image](/static/images/updock-font.png)
 
 I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
 
