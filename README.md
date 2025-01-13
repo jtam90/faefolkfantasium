@@ -37,10 +37,16 @@ For my Milestone Project 3 in L5 Web Application Development, I have created a F
       - I have used the following fonts: 
       
       "Princess Sofia" as the font for the main header:
-      
+
+      ![Font Image](/workspace/faefolkfantasium/faefolkfantasium/static/images/princess-sofia-font.png)
+
       "Macondo" for the smaller headers and buttons:
+
+      ![Font Image](/workspace/faefolkfantasium/faefolkfantasium/static/images/macondo-font.png)
       
       "Updock" for the card titles:
+      
+      ![Font Image](/workspace/faefolkfantasium/faefolkfantasium/static/images/updock-font.png)
       
       I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
 
