@@ -20,7 +20,7 @@ As a User...
 ## Colour Scheme
 Below represents the different colors used in this project:
 
-- ![#eaf276](https://camo.githubusercontent.com/79fffb1abe006e00b1c37f9c37df75bcf2be767be3fc2df36129b06ebdc62ee8/68747470733a2f2f7669612e706c616365686f6c6465722e636f6d2f31352f6561663237362f3030303030303f746578743d2b) `#eaf276`
+- ![#eaf276](https://via.placeholder.com/15/eaf276/000000?text=+) `#eaf276`
 - ![#fff56d](https://via.placeholder.com/15/fff56d/000000?text=+) `#fff56d`
 - ![#fffb00](https://via.placeholder.com/15/fffb00/000000?text=+) `#fffb00`
 - ![#486b48](https://via.placeholder.com/15/486b48/000000?text=+) `#486b48`
