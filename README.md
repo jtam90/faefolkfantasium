@@ -20,13 +20,13 @@ As a User...
 ## Colour Scheme
 Below represents the different colors used in this project:
 
-- ![#eaf276](https://via.placeholder.com/15/eaf276/000000?text=+) `#eaf276`
-- ![#fff56d](https://via.placeholder.com/15/fff56d/000000?text=+) `#fff56d`
-- ![#fffb00](https://via.placeholder.com/15/fffb00/000000?text=+) `#fffb00`
-- ![#486b48](https://via.placeholder.com/15/486b48/000000?text=+) `#486b48`
-- ![#3e613e](https://via.placeholder.com/15/3e613e/000000?text=+) `#3e613e`
-- ![#263c26](https://via.placeholder.com/15/263c26/000000?text=+) `#263c26`
-- ![#dc7601](https://via.placeholder.com/15/dc7601/000000?text=+) `#dc7601`
+- ![#eaf276](https://via.placeholder.com/15/eaf276/000000?text=+) 
+- ![#fff56d](https://via.placeholder.com/15/fff56d/000000?text=+) 
+- ![#fffb00](https://via.placeholder.com/15/fffb00/000000?text=+) 
+- ![#486b48](https://via.placeholder.com/15/486b48/000000?text=+) 
+- ![#3e613e](https://via.placeholder.com/15/3e613e/000000?text=+)
+- ![#263c26](https://via.placeholder.com/15/263c26/000000?text=+)
+- ![#dc7601](https://via.placeholder.com/15/dc7601/000000?text=+)
 
       
 I chose these colours for specific earthy tones which represent the ethereal, fantasy world in which these beings dwell.
