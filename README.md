@@ -50,6 +50,8 @@ I have used the following fonts:
 
 I chose these fonts for their whimsical look to go in line with the app. I have used [Google Fonts](https://fonts.google.com) for this.
 
+## Imagery
+
 
 
 
