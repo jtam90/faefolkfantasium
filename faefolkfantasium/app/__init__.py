@@ -1,3 +1,5 @@
+# __init__.py or app.py
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -7,7 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Initialize database and migration extensions
+# Initialize the database and migration extensions
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -31,8 +33,10 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
-    # Register routes or blueprints
-    from . import routes
-    app.register_blueprint(routes.bp)
+    # Import routes and models inside the factory function to avoid circular imports
+    from .models import Being
+    from .routes import bp  # Assuming you have a 'bp' blueprint in routes.py
+    app.register_blueprint(bp)
 
     return app
+
