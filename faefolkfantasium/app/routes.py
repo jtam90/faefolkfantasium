@@ -3,8 +3,12 @@ from . import db  # Import db from the current package
 from .models import Being  
 import os
 
+from flask import Flask, render_template
+
+app = Flask(__name__, template_folder='faefolkfantasium/templates')
+
 # Define the blueprint
-bp = Blueprint('main', __name__, template_folder='templates')
+bp = Blueprint('main', __name__)
 
 # Utility function to check if file extension is allowed
 def allowed_file(filename):
