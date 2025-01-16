@@ -1,3 +1,4 @@
+import os
 from faefolkfantasium.app import create_app
 
 app = create_app()
