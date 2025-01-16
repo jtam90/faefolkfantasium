@@ -4,7 +4,7 @@ from .models import Being
 import os
 
 # Define the blueprint
-bp = Blueprint('main', __name__)
+bp = Blueprint('main', __name__, template_folder='templates')
 
 # Utility function to check if file extension is allowed
 def allowed_file(filename):
